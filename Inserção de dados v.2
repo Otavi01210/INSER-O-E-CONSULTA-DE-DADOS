@@ -1,0 +1,42 @@
+create database if not exists Brain_Up
+default character set utf8mb4
+collate utf8mb4_0900_ai_ci;
+
+use Brain_Up;
+
+create table if not exists aluno (
+  id_aluno int primary key auto_increment,
+  nome varchar(30) not null,
+  data_nascimento date,
+  senha varchar(6),
+  email varchar(30) not null,
+  data_cadastro date,
+  frequencia_aluno boolean
+) character set utf8mb4;
+
+desc aluno;
+create table if not exists atividade (
+ id_atividade int primary key auto_increment,
+ tempo_inicio datetime,
+ materia varchar(30),
+ nota int,
+ tempo_desejado time,
+ duracao time,
+ nivel_dificuldade enum('fácil','médio','difícil'),
+ status_n enum ('pendente','concluída'),
+ id_estudante int,
+ foreign key (id_aluno) references aluno(id_aluno)
+) character set utf8mb4;
+
+desc atividade;
+-- Inserindo os dados
+insert into aluno
+(nome,data_nascimento,senha,email,data_cadastro,frequencia_aluno)
+values
+('Julio','2010-03-12',1203,'julio.verga@escola.pr.gov.br','2020-12-18',true),
+('Paulo','2008-07-21',2107,'paulo.lira@escola.pr.gov.br','2019-08-06',true),
+('Nicolas','2009-03-04',0403,'nicolas.pereira@escola.pr.gov.br','2018-10-01',false),
+('Pedro','2011-05-15',1505,'pedro.henrique@escola.pr.gov.br','2021-11-29',false),
+('Matheus','2007-08-14',1408,'matheus.pereira@escola.pr.gov.br','2006-09-30',true),
+('Luiz','2011-06-08',0806,'luiz.silva@escola.pr.gov.br','2022-06-07',false);
+select*from aluno;
