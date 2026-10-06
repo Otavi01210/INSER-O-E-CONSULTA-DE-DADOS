@@ -1,0 +1,12 @@
+
+-- Inserindo os dados
+insert into aluno
+(nome,data_nascimento,senha,email,data_cadastro,frequencia_estudante)
+values
+('Julio','2010-03-12',1203,'julio.verga@escola.pr.gov.br','2020-12-18',true),
+('Paulo','2008-07-21',2107,'paulo.lira@escola.pr.gov.br','2019-08-06',true),
+('Nicolas','2009-03-04',0403,'nicolas.pereira@escola.pr.gov.br','2018-10-01',false),
+('Pedro','2011-05-15',1505,'pedro.henrique@escola.pr.gov.br','2021-11-29',false),
+('Matheus','2007-08-14',1408,'matheus.pereira@escola.pr.gov.br','2006-09-30',true),
+('Luiz','2011-06-08',0806,'luiz.silva@escola.pr.gov.br','2022-06-07',false);
+select*from aluno;
